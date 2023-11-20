@@ -1,0 +1,13 @@
+# Query using JOINS to find the top 10 countries with the most customers and determine the percentage of customers each country contributes to the total
+
+
+SELECT  D.country,
+        COUNT(customer_id) AS nr_customers,
+        (COUNT(customer_id) * 1.0 / (SELECT COUNT(DISTINCT customer_id) FROM customer)) AS percentage_of_total_customers
+FROM customer A
+INNER JOIN address B ON A.address_id = B.address_id
+INNER JOIN city C ON B.city_id = C.city_id
+INNER JOIN country D ON C.country_id = D.country_id
+GROUP BY country
+ORDER BY COUNT(customer_id) DESC
+LIMIT 10
