@@ -1,4 +1,4 @@
-# Query using JOINS to find the top 10 countries with the most customers and determine the percentage of customers each country contributes to the total
+# SQL Query (JOIN) to find the top 10 countries with the most customers and determine the percentage of customers each country contributes to the total
 
 
 SELECT  D.country,
