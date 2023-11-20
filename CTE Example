@@ -1,4 +1,4 @@
-# SQL query using CTE to find out the number of total customers per country, and how many of the top 5 customers are based within each country
+# SQL Query (CTE) to find the number of total customers per country, and how many of the top 5 customers are based within each country
 
 WITH top_5_payers (customer_id, first_name, last_name, country, city, total_paid) AS
 	(SELECT customer.customer_id,
